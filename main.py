@@ -17,4 +17,10 @@ async def on_shard_ready(shard_id):
 	
 	print(shard_id)
 	
+for file in os.listdir('./command'):
+	
+	if file.endswith('.py'):
+		
+		bot.load_extension(f'command.{file[:-3]}')
+
 bot.run(os.environ.get("Token"))
